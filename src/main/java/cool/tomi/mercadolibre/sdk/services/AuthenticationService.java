@@ -37,6 +37,7 @@ public class AuthenticationService extends MercadoLibreService {
         ServiceConfiguration configuration = MercadoLibreService.defaultConfiguration()
                 .path(AUTHORIZATION_PATH)
                 .httpMethod(HttpMethod.POST)
+                .body("")
                 .queryParams(params)
                 .build();
 
@@ -54,6 +55,7 @@ public class AuthenticationService extends MercadoLibreService {
         ServiceConfiguration configuration = MercadoLibreService.defaultConfiguration()
                 .path(AUTHORIZATION_PATH)
                 .httpMethod(HttpMethod.POST)
+                .body("")
                 .queryParams(params)
                 .build();
 
