@@ -1,7 +1,7 @@
 package cool.tomi;
 
-import cool.tomi.models.Item;
-import cool.tomi.services.ItemService;
+import cool.tomi.mercadolibre.sdk.models.Item;
+import cool.tomi.mercadolibre.sdk.services.ItemService;
 import junit.framework.Test;
 import junit.framework.TestCase;
 import junit.framework.TestSuite;

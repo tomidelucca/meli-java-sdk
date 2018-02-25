@@ -1,4 +1,4 @@
-package cool.tomi.utils;
+package cool.tomi.mercadolibre.sdk.utils;
 
 import java.util.function.Function;
 

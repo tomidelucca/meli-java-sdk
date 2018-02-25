@@ -1,4 +1,4 @@
-package cool.tomi.utils.rest;
+package cool.tomi.mercadolibre.sdk.utils.rest;
 
 import okhttp3.Interceptor;
 import okhttp3.Request;

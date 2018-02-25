@@ -1,9 +1,9 @@
-package cool.tomi.services;
+package cool.tomi.mercadolibre.sdk.services;
 
-import cool.tomi.interfaces.ReauthenticationProvider;
-import cool.tomi.models.Authentication;
-import cool.tomi.utils.rest.RestHelper;
-import cool.tomi.utils.rest.ServiceConfiguration;
+import cool.tomi.mercadolibre.sdk.interfaces.ReauthenticationProvider;
+import cool.tomi.mercadolibre.sdk.models.Authentication;
+import cool.tomi.mercadolibre.sdk.utils.rest.RestHelper;
+import cool.tomi.mercadolibre.sdk.utils.rest.ServiceConfiguration;
 import okhttp3.Response;
 
 public abstract class MercadoLibreService {
@@ -20,10 +20,12 @@ public abstract class MercadoLibreService {
 
         if (MercadoLibreService.requiresAuthentication(response) && reauthenticationProvider != null) {
             Authentication authentication = reauthenticationProvider.reauthorize();
-            ServiceConfiguration newConfiguration = new ServiceConfiguration.Builder(configuration)
-                    .addQueryParam("access_token", authentication.getAccessToken())
-                    .build();
-            response = RestHelper.INSTANCE.execute(newConfiguration);
+            if (authentication != null) {
+                ServiceConfiguration newConfiguration = new ServiceConfiguration.Builder(configuration)
+                        .addQueryParam("access_token", authentication.getAccessToken())
+                        .build();
+                response = RestHelper.INSTANCE.execute(newConfiguration);
+            }
         }
 
         return response;

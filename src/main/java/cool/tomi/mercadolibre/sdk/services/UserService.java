@@ -1,10 +1,10 @@
-package cool.tomi.services;
+package cool.tomi.mercadolibre.sdk.services;
 
-import cool.tomi.models.Error;
-import cool.tomi.models.User;
-import cool.tomi.utils.Either;
-import cool.tomi.utils.rest.RestHelper;
-import cool.tomi.utils.rest.ServiceConfiguration;
+import cool.tomi.mercadolibre.sdk.models.Error;
+import cool.tomi.mercadolibre.sdk.models.User;
+import cool.tomi.mercadolibre.sdk.utils.Either;
+import cool.tomi.mercadolibre.sdk.utils.rest.RestHelper;
+import cool.tomi.mercadolibre.sdk.utils.rest.ServiceConfiguration;
 import okhttp3.Response;
 
 public class UserService extends MercadoLibreService {

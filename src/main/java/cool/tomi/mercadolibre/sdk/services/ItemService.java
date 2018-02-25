@@ -1,11 +1,12 @@
-package cool.tomi.services;
+package cool.tomi.mercadolibre.sdk.services;
 
-import cool.tomi.models.Error;
-import cool.tomi.models.Item;
-import cool.tomi.utils.Either;
-import cool.tomi.utils.rest.HttpMethod;
-import cool.tomi.utils.rest.RestHelper;
-import cool.tomi.utils.rest.ServiceConfiguration;
+import cool.tomi.mercadolibre.sdk.models.Error;
+import cool.tomi.mercadolibre.sdk.models.Item;
+import cool.tomi.mercadolibre.sdk.models.ItemRelist;
+import cool.tomi.mercadolibre.sdk.utils.Either;
+import cool.tomi.mercadolibre.sdk.utils.rest.HttpMethod;
+import cool.tomi.mercadolibre.sdk.utils.rest.RestHelper;
+import cool.tomi.mercadolibre.sdk.utils.rest.ServiceConfiguration;
 import okhttp3.Response;
 
 public class ItemService extends MercadoLibreService {
@@ -13,6 +14,7 @@ public class ItemService extends MercadoLibreService {
     private static final String GET_ITEM_PATH = "/items/{id}";
     private static final String CREATE_ITEM_PATH = "/items";
     private static final String UPDATE_ITEM_PATH = "/items/{id}";
+    private static final String RELIST_ITEM_PATH = "/items/{id}/relist";
 
     public ItemService() {}
 
@@ -49,6 +51,21 @@ public class ItemService extends MercadoLibreService {
                 .path(path)
                 .httpMethod(HttpMethod.PUT)
                 .body(item)
+                .build();
+
+        Response response = execute(configuration);
+        return RestHelper.responseToEither(response, Item.class, Error.class);
+    }
+
+    public Either<Item, Error> relistItem(final Item item, final String accessToken) {
+        String path = RELIST_ITEM_PATH.replace("{id}", item.getId());
+
+        ItemRelist itemRelist = new ItemRelist(item);
+
+        ServiceConfiguration configuration = MercadoLibreService.authenticatedConfiguration(accessToken)
+                .path(path)
+                .body(itemRelist)
+                .httpMethod(HttpMethod.POST)
                 .build();
 
         Response response = execute(configuration);

@@ -1,6 +1,6 @@
-package cool.tomi.models;
+package cool.tomi.mercadolibre.sdk.models;
 
-import cool.tomi.constants.MercadoLibre;
+import cool.tomi.mercadolibre.sdk.constants.MercadoLibre;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -22,6 +22,7 @@ public class Item {
     private String sellerCustomField;
     private String permalink;
     private String status;
+    private Long sellerId;
 
     public Item() {
 
@@ -145,6 +146,14 @@ public class Item {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public Long getSellerId() {
+        return sellerId;
+    }
+
+    public void setSellerId(Long sellerId) {
+        this.sellerId = sellerId;
     }
 
     @Override

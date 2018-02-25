@@ -1,7 +1,7 @@
-package cool.tomi.utils.rest;
+package cool.tomi.mercadolibre.sdk.utils.rest;
 
-import cool.tomi.utils.Either;
-import cool.tomi.utils.gson.GsonHelper;
+import cool.tomi.mercadolibre.sdk.utils.Either;
+import cool.tomi.mercadolibre.sdk.utils.gson.GsonHelper;
 import okhttp3.*;
 
 import java.io.IOException;

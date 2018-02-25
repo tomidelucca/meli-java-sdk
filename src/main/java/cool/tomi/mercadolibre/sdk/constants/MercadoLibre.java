@@ -1,4 +1,4 @@
-package cool.tomi.constants;
+package cool.tomi.mercadolibre.sdk.constants;
 
 public class MercadoLibre {
 

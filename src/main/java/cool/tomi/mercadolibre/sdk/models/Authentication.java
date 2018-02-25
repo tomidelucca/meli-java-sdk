@@ -1,4 +1,4 @@
-package cool.tomi.models;
+package cool.tomi.mercadolibre.sdk.models;
 
 public class Authentication {
 

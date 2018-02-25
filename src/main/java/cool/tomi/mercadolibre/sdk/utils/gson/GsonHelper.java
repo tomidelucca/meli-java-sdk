@@ -1,4 +1,4 @@
-package cool.tomi.utils.gson;
+package cool.tomi.mercadolibre.sdk.utils.gson;
 
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
