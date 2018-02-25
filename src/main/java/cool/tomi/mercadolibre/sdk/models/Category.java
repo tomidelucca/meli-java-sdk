@@ -12,8 +12,18 @@ public class Category {
     private List<Category> childrenCategories;
     private String attributeTypes;
 
-    public Category() {
+    /*package*/ Category() {
 
+    }
+
+    public Category(Category.Builder builder) {
+        this.id = builder.id;
+        this.name = builder.name;
+        this.settings = builder.settings;
+        this.totalItemsInThisCategory = builder.totalItemsInThisCategory;
+        this.pathFromRoot = builder.pathFromRoot;
+        this.childrenCategories = builder.childrenCategories;
+        this.attributeTypes = builder.attributeTypes;
     }
 
     public String getId() {
@@ -83,5 +93,58 @@ public class Category {
                 ", childrenCategories=" + childrenCategories +
                 ", attributeTypes='" + attributeTypes + '\'' +
                 '}';
+    }
+
+    public static class Builder {
+        private String id;
+        private String name;
+        private CategorySettings settings;
+        private Integer totalItemsInThisCategory;
+        private List<Category> pathFromRoot;
+        private List<Category> childrenCategories;
+        private String attributeTypes;
+
+        public Builder() {
+
+        }
+
+        public Builder setId(String id) {
+            this.id = id;
+            return this;
+        }
+
+        public Builder setName(String name) {
+            this.name = name;
+            return this;
+        }
+
+        public Builder setSettings(CategorySettings settings) {
+            this.settings = settings;
+            return this;
+        }
+
+        public Builder setTotalItemsInThisCategory(Integer totalItemsInThisCategory) {
+            this.totalItemsInThisCategory = totalItemsInThisCategory;
+            return this;
+        }
+
+        public Builder setPathFromRoot(List<Category> pathFromRoot) {
+            this.pathFromRoot = pathFromRoot;
+            return this;
+        }
+
+        public Builder setChildrenCategories(List<Category> childrenCategories) {
+            this.childrenCategories = childrenCategories;
+            return this;
+        }
+
+        public Builder setAttributeTypes(String attributeTypes) {
+            this.attributeTypes = attributeTypes;
+            return this;
+        }
+
+        public Category build() {
+            return new Category(this);
+        }
     }
 }

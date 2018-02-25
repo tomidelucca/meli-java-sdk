@@ -2,8 +2,6 @@ package cool.tomi.mercadolibre.sdk.models;
 
 public class Error {
 
-    public static final Error GENERIC = new Error("Generic error", "Couldn't generate a response", -1);
-
     private String message;
     private String error;
     private Integer status;
@@ -12,10 +10,10 @@ public class Error {
 
     }
 
-    public Error(final String message, final String error, final Integer status) {
-        this.message = message;
-        this.error = error;
-        this.status = status;
+    public Error(Error.Builder builder) {
+        this.message = builder.message;
+        this.error = builder.error;
+        this.status = builder.status;
     }
 
     public String getMessage() {
@@ -53,5 +51,34 @@ public class Error {
                 ", error='" + error + '\'' +
                 ", status=" + status +
                 '}';
+    }
+
+    public static class Builder {
+        private String message;
+        private String error;
+        private Integer status;
+
+        public Builder() {
+
+        }
+
+        public Builder setMessage(String message) {
+            this.message = message;
+            return this;
+        }
+
+        public Builder setError(String error) {
+            this.error = error;
+            return this;
+        }
+
+        public Builder setStatus(Integer status) {
+            this.status = status;
+            return this;
+        }
+
+        public Error build() {
+            return new Error(this);
+        }
     }
 }

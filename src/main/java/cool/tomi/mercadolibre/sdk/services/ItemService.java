@@ -2,7 +2,6 @@ package cool.tomi.mercadolibre.sdk.services;
 
 import cool.tomi.mercadolibre.sdk.models.Error;
 import cool.tomi.mercadolibre.sdk.models.Item;
-import cool.tomi.mercadolibre.sdk.models.ItemRelist;
 import cool.tomi.mercadolibre.sdk.utils.Either;
 import cool.tomi.mercadolibre.sdk.utils.rest.HttpMethod;
 import cool.tomi.mercadolibre.sdk.utils.rest.RestHelper;
@@ -62,7 +61,7 @@ public class ItemService extends MercadoLibreService {
     public Either<Item, Error> relistItem(final Item item, final String accessToken) {
         String path = RELIST_ITEM_PATH.replace("{id}", item.getId());
 
-        ItemRelist itemRelist = new ItemRelist(item);
+        Item.Relist itemRelist = item.relistItem();
 
         ServiceConfiguration configuration = MercadoLibreService.authenticatedConfiguration(accessToken)
                 .path(path)

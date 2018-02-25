@@ -6,7 +6,7 @@ public class Authentication {
     private String refreshToken;
     private Long expiresIn;
 
-    public Authentication() {
+    /*package*/ Authentication() {
 
     }
 
