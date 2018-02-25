@@ -45,8 +45,9 @@ public class ItemService extends MercadoLibreService {
     }
 
     public Either<Item, Error> updateItem(final Item item, final String accessToken) {
+        String itemId = item.getId();
         String path = UPDATE_ITEM_PATH.replace("{id}", item.getId());
-
+        item.setId(null);
         ServiceConfiguration configuration = MercadoLibreService.authenticatedConfiguration(accessToken)
                 .path(path)
                 .httpMethod(HttpMethod.PUT)
@@ -54,6 +55,7 @@ public class ItemService extends MercadoLibreService {
                 .build();
 
         Response response = execute(configuration);
+        item.setId(itemId);
         return RestHelper.responseToEither(response, Item.class, Error.class);
     }
 

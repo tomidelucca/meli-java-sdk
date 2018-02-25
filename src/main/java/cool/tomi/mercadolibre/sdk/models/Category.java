@@ -12,7 +12,7 @@ public class Category {
     private List<Category> childrenCategories;
     private String attributeTypes;
 
-    /*package*/ Category() {
+    public Category() {
 
     }
 

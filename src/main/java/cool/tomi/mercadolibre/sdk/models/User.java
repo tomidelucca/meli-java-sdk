@@ -8,7 +8,7 @@ public class User {
     private String nickname;
     private String email;
 
-    /*package*/ User() {
+    public User() {
 
     }
 

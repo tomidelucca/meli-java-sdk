@@ -8,7 +8,7 @@ public class CategorySettings {
     private Integer maxTitleLength;
     private List<String> itemConditions;
 
-    /*package*/ CategorySettings() {
+    public CategorySettings() {
 
     }
 
