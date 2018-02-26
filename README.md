@@ -54,7 +54,7 @@ Feel free to submit a **PR** if the current implementation does not suffice your
 
 ## ❤️ Credits
 
-### 📚 Dependencies
+### 📚 Dependencies
 
 [Google GSON](https://github.com/google/gson)
 
