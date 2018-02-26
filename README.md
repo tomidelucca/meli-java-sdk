@@ -41,7 +41,7 @@ if (response.isValuePresent()) {
 }
 ```
 
-## 🎁 Scope
+## 🔎 Scope
 
 Current supported services are:
 
@@ -54,14 +54,16 @@ Feel free to submit a **PR** if the current implementation does not suffice your
 
 ## ❤️ Credits
 
-#### Dependencies
+### 📚 Dependencies
 
 [Google GSON](https://github.com/google/gson)
 
 [Square OkHttp](https://github.com/square/okhttp)
 
+### 👤 Authors
+
+[Tomi De Lucca](https://twitter.com/tomidelucca)
+
 ## 🎓 License
 
 [MIT](http://webpro.mit-license.org/)
-
-© Tomi De Lucca 2018
