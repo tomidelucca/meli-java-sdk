@@ -202,7 +202,7 @@ public class Item {
                 '}';
     }
 
-    public class Description {
+    public static class Description {
 
         private String plainText;
 
@@ -228,7 +228,7 @@ public class Item {
         }
     }
 
-    public class Image {
+    public static class Image {
 
         private String id;
         private String source;
