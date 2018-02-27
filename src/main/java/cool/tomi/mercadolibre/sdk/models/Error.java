@@ -20,24 +20,12 @@ public class Error {
         return message;
     }
 
-    public void setMessage(final String message) {
-        this.message = message;
-    }
-
     public String getError() {
         return error;
     }
 
-    public void setError(final String error) {
-        this.error = error;
-    }
-
     public Integer getStatus() {
         return status;
-    }
-
-    public void setStatus(final Integer status) {
-        this.status = status;
     }
 
     public Boolean isUnauthorized() {

@@ -42,7 +42,6 @@ public class Item {
         this.description = builder.description;
         this.pictures = builder.pictures;
         this.sellerCustomField = builder.sellerCustomField;
-        this.permalink = builder.permalink;
         this.status = builder.status;
         this.sellerId = builder.sellerId;
     }
@@ -63,122 +62,60 @@ public class Item {
         return siteId;
     }
 
-    public void setSiteId(MercadoLibre.Site siteId) {
-        this.siteId = siteId;
-    }
-
     public String getTitle() {
         return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
     }
 
     public String getCategoryId() {
         return categoryId;
     }
 
-    public void setCategoryId(String categoryId) {
-        this.categoryId = categoryId;
-    }
-
     public BigDecimal getPrice() {
         return price;
-    }
-
-    public void setPrice(BigDecimal price) {
-        this.price = price;
     }
 
     public String getCurrencyId() {
         return currencyId;
     }
 
-    public void setCurrencyId(String currencyId) {
-        this.currencyId = currencyId;
-    }
-
     public Integer getAvailableQuantity() {
         return availableQuantity;
-    }
-
-    public void setAvailableQuantity(Integer availableQuantity) {
-        this.availableQuantity = availableQuantity;
     }
 
     public String getBuyingMode() {
         return buyingMode;
     }
 
-    public void setBuyingMode(String buyingMode) {
-        this.buyingMode = buyingMode;
-    }
-
     public String getListingTypeId() {
         return listingTypeId;
-    }
-
-    public void setListingTypeId(String listingTypeId) {
-        this.listingTypeId = listingTypeId;
     }
 
     public String getCondition() {
         return condition;
     }
 
-    public void setCondition(String condition) {
-        this.condition = condition;
-    }
-
     public Description getDescription() {
         return description;
-    }
-
-    public Item setDescription(Description description) {
-        this.description = description;
-        return this;
     }
 
     public List<Image> getPictures() {
         return pictures;
     }
 
-    public Item setPictures(List<Image> pictures) {
-        this.pictures = pictures;
-        return this;
-    }
-
     public String getSellerCustomField() {
         return sellerCustomField;
-    }
-
-    public void setSellerCustomField(String sellerCustomField) {
-        this.sellerCustomField = sellerCustomField;
     }
 
     public String getPermalink() {
         return permalink;
     }
 
-    public void setPermalink(String permalink) {
-        this.permalink = permalink;
-    }
-
     public String getStatus() {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public Long getSellerId() {
         return sellerId;
-    }
-
-    public void setSellerId(Long sellerId) {
-        this.sellerId = sellerId;
     }
 
     @Override
@@ -218,10 +155,6 @@ public class Item {
             return plainText;
         }
 
-        public void setPlainText(String plainText) {
-            this.plainText = plainText;
-        }
-
         @Override
         public String toString() {
             return plainText;
@@ -247,32 +180,16 @@ public class Item {
             return id;
         }
 
-        public void setId(String id) {
-            this.id = id;
-        }
-
         public String getSource() {
             return source;
-        }
-
-        public void setSource(String source) {
-            this.source = source;
         }
 
         public String getUrl() {
             return url;
         }
 
-        public void setUrl(String url) {
-            this.url = url;
-        }
-
         public String getSecureUrl() {
             return secureUrl;
-        }
-
-        public void setSecureUrl(String secureUrl) {
-            this.secureUrl = secureUrl;
         }
 
         @Override
@@ -306,24 +223,12 @@ public class Item {
             return price;
         }
 
-        public void setPrice(BigDecimal price) {
-            this.price = price;
-        }
-
         public Integer getQuantity() {
             return quantity;
         }
 
-        public void setQuantity(Integer quantity) {
-            this.quantity = quantity;
-        }
-
         public String getListingTypeId() {
             return listingTypeId;
-        }
-
-        public void setListingTypeId(String listingTypeId) {
-            this.listingTypeId = listingTypeId;
         }
 
         @Override
@@ -351,7 +256,6 @@ public class Item {
         private Description description;
         private List<Image> pictures;
         private String sellerCustomField;
-        private String permalink;
         private String status;
         private Long sellerId;
 
@@ -421,11 +325,6 @@ public class Item {
 
         public Builder setSellerCustomField(String sellerCustomField) {
             this.sellerCustomField = sellerCustomField;
-            return this;
-        }
-
-        public Builder setPermalink(String permalink) {
-            this.permalink = permalink;
             return this;
         }
 

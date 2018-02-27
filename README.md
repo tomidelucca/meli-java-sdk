@@ -1,20 +1,20 @@
 # Mercado Libre Java SDK
 
-## Description
+## 🗒  Description
 
-A real Java SDK for working with the Mercado Libre API.
+A synchronous full featured Java SDK for Mercado Libre.
 
-## 💾 Installation
+## 💾  Installation
 
 
-## 💼 Usage
+## 💼  Usage
 
 The SDK consists on isolated services. 
 
 For example, lets take a look on how to use the `CategoryService` to fetch all available categories in MLA.
 
 ```
-CategoryService service = new CategoryService();
+CategoryService service = CategoryService.getService();
 Either<Category[], Error> response = service.getAllCategories(MercadoLibre.Site.MLA);
 
 if (response.isValuePresent()) {
@@ -29,7 +29,7 @@ if (response.isValuePresent()) {
 Authenticating is super easy with the `AuthenticationService`!
 
 ```
-AuthenticationService service = new AuthenticationService(clientId, clientSecret);
+AuthenticationService service = AuthenticationService.getService(clientId, clientSecret);
 Either<Authentication, Error> response = service.authorize(serverCode, redirectUri);
 
 if (response.isValuePresent()) {
@@ -41,7 +41,7 @@ if (response.isValuePresent()) {
 }
 ```
 
-## 🔎 Scope
+## 🔎  Scope
 
 Current supported services are:
 
@@ -52,18 +52,20 @@ Current supported services are:
 
 Feel free to submit a **PR** if the current implementation does not suffice your needs.
 
-## ❤️ Credits
+## ❤️  Credits
 
-### 📚 Dependencies
+### Dependencies
 
 [Google GSON](https://github.com/google/gson)
 
 [Square OkHttp](https://github.com/square/okhttp)
 
-### 👤 Authors
+### Author
 
 [Tomi De Lucca](https://twitter.com/tomidelucca)
 
 ## 🎓 License
 
 [MIT](http://webpro.mit-license.org/)
+
+

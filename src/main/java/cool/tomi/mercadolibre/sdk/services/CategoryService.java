@@ -13,8 +13,8 @@ public class CategoryService extends MercadoLibreService {
     private static final String GET_ALL_CATEGORIES_PATH = "/sites/{site_id}/categories";
     private static final String GET_CATEGORY_PATH = "/categories";
 
-    public CategoryService() {
-
+    public static CategoryService getService() {
+        return new CategoryService();
     }
 
     public Either<Category[], Error> getAllCategories(final MercadoLibre.Site site) {

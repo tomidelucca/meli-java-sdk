@@ -12,7 +12,9 @@ public class UserService extends MercadoLibreService {
     private static final String GET_CURRENT_USER_PATH = "/users/me";
     private static final String GET_USER_PATH = "/users/{user_id}";
 
-    public UserService() {}
+    public static UserService getService() {
+        return new UserService();
+    }
 
     public Either<User, Error> currentUser(final String accessToken) {
         ServiceConfiguration configuration = MercadoLibreService.authenticatedConfiguration(accessToken)

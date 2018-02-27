@@ -21,9 +21,13 @@ public class AuthenticationService extends MercadoLibreService {
     private Long clientId;
     private String clientSecret;
 
-    public AuthenticationService(final Long clientId, final String clientSecret) {
+    private AuthenticationService(final Long clientId, final String clientSecret) {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
+    }
+
+    public static AuthenticationService getService(final Long clientId, final String clientSecret) {
+        return new AuthenticationService(clientId, clientSecret);
     }
 
     public Either<Authentication, Error> authorize(final String code, final String redirectUri) {

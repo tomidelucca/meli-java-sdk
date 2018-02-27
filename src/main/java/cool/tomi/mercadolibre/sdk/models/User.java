@@ -16,40 +16,20 @@ public class User {
         return id;
     }
 
-    public void setId(final Long id) {
-        this.id = id;
-    }
-
     public String getFirstName() {
         return firstName;
-    }
-
-    public void setFirstName(final String firstName) {
-        this.firstName = firstName;
     }
 
     public String getLastName() {
         return lastName;
     }
 
-    public void setLastName(final String lastName) {
-        this.lastName = lastName;
-    }
-
     public String getNickname() {
         return nickname;
     }
 
-    public void setNickname(final String nickname) {
-        this.nickname = nickname;
-    }
-
     public String getEmail() {
         return email;
-    }
-
-    public void setEmail(final String email) {
-        this.email = email;
     }
 
     @Override
