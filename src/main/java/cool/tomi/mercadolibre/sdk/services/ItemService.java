@@ -15,6 +15,8 @@ public class ItemService extends MercadoLibreService {
     private static final String UPDATE_ITEM_PATH = "/items/{id}";
     private static final String RELIST_ITEM_PATH = "/items/{id}/relist";
 
+    private ItemService() {}
+
     public static ItemService getService() {
         return new ItemService();
     }
