@@ -42,6 +42,7 @@ public class Error {
     }
 
     public static class Builder {
+
         private String message;
         private String error;
         private Integer status;

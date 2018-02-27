@@ -95,6 +95,7 @@ public class Category {
     }
 
     public static class Builder {
+
         private String id;
         private String name;
 
