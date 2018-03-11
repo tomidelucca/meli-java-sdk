@@ -10,6 +10,7 @@ public class Item {
     private String id;
     private MercadoLibre.Site siteId;
     private String title;
+    private String subtitle;
     private String categoryId;
     private BigDecimal price;
     private String currencyId;
@@ -32,6 +33,7 @@ public class Item {
         this.id = builder.id;
         this.siteId = builder.siteId;
         this.title = builder.title;
+        this.subtitle = builder.subtitle;
         this.categoryId = builder.categoryId;
         this.price = builder.price;
         this.currencyId = builder.currencyId;
@@ -64,6 +66,10 @@ public class Item {
 
     public String getTitle() {
         return title;
+    }
+
+    public String getSubtitle() {
+        return subtitle;
     }
 
     public String getCategoryId() {
@@ -123,6 +129,7 @@ public class Item {
         return "Item{" +
                 "id='" + id + '\'' +
                 ", title='" + title + '\'' +
+                ", subtitle='" + subtitle + '\'' +
                 ", siteId='" + siteId + '\'' +
                 ", categoryId='" + categoryId + '\'' +
                 ", price=" + price +
@@ -246,6 +253,7 @@ public class Item {
         private String id;
         private MercadoLibre.Site siteId;
         private String title;
+        private String subtitle;
         private String categoryId;
         private BigDecimal price;
         private String currencyId;
@@ -275,6 +283,11 @@ public class Item {
 
         public Builder setTitle(String title) {
             this.title = title;
+            return this;
+        }
+
+        public Builder setSubtitle(String subtitle) {
+            this.subtitle = subtitle;
             return this;
         }
 
