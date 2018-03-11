@@ -4,7 +4,7 @@
 
     <groupId>cool.tomi</groupId>
     <artifactId>meli-java-sdk</artifactId>
-    <version>0.0.1-ALPHA</version>
+    <version>0.0.1.BETA.1</version>
 
     <build>
         <plugins>
